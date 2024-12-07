@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap'); /*fonte*/
+
+*{ /*resetando as margens do site que o navegador aplica*/
+    margin:0; /*sem margem*/
+    padding:0; /*sem espaço*/
+    box-sizing: border-box; /*estilo da borda*/
+    font-family: 'Poppins', sans-serif; /*fonte da letra*/
+}
+
+body {
+    height: 100vh; /*altura*/
+    display: flex;
+    justify-content: center;
+    align-items: center; /*alinha os itens no centro*/
+    background: linear-gradient(to bottom right, #F8B8F2, #d252fa, #a82d9c); /*cor de fundo para um gradiente*/
+}
+
+.container {
+    width: 50vw; /*largura que vai ocupar de acordo com a tela*/
+    height: 60vh; /*altura*/
+    display: grid; /*permite moldar a div em formato de linhas e colunas*/
+    grid-template-columns: 100%;
+    grid-template-areas: "login";
+    box-shadow: 0 0 17px 10px rgb(0 0 0 / 30%); /*sombra do bloco que seria o container*/
+    border-radius: 20px; /*arredondar as bordas do container*/
+    background: #fff; /*cor de fundo*/
+    overflow: hidden; /*todo corpo que cruzar a linha para fora do container (das divs que estão dentro do container) vai sumir*/
+}
+
+.design {
+    grid-area: design;
+    display: none; /*invisivel*/
+    position: relative;
+}
+
+.rotate-45 { /*rotacao*/
+    transform: rotate(-45deg); /*rotação do item*/
+}
+
+.design .pill-1 { /*primeiro item incluso no design*/
+    position: absolute;
+    width: 80px; /*largura*/
+    height: 200px; /*altura*/
+    background: linear-gradient(#F8B8F2, #d252fa, #a82d9c); /*cor de fundo para um gradiente*/
+    border-radius: 40px; /*arredondar a borda*/
+    bottom: 0;
+    left: -40px; /*posição de acordo com o final da página*/
+}
+
+.design .pill-2 { /*segundo item incluso no design*/
+    position: absolute;
+    height: 460px; /*altura*/
+    width: 260px; /*largura*/
+    background: linear-gradient(#F8B8F2, #d252fa, #a82d9c); /*cor de fundo para um gradiente*/
+    border-radius: 200px; /*arredondar a borda*/
+    border: 30px solid #F8B8F2;
+    top: -90px; /*posição de acordo com o topo da página*/
+    left: -80px; /*posição de acordo com o final da página*/
+}
+
+.design .pill-3 { /*terceiro item incluso no design*/
+    position: absolute;
+    height: 200px; /*altura*/
+    width: 100px; /*largura*/
+    background: linear-gradient(#F8B8F2, #d252fa, #a82d9c); /*cor de fundo para um gradiente*/
+    border-radius: 70px; /*arredondar a borda*/
+    top: -100px; /*posição de acordo com o topo da página*/
+    left: 160px; /*posição de acordo com o final da página*/
+}
+
+.design .pill-4 { /*quarto item incluso no design*/
+    position: absolute;
+    height: 300px; /*altura*/
+    width: 120px; /*largura*/
+    background: linear-gradient(#F8B8F2, #d252fa); /*cor de fundo para um gradiente*/
+    border-radius: 70px; /*arredondar a borda*/
+    bottom: -180px;
+    left: 220px; /*posição de acordo com o final da página*/
+}
+
+.logo {
+    position: flex;
+}
+
+.logo img {
+    width: 80px;
+}
+
+.login {
+    grid-area: login;
+    display: flex;
+    flex-direction: column; /*deixar em colunas*/
+    align-items: center; /*alinhar os itens no centro*/
+    justify-content: center;
+    position: relative;
+}
+
+.login h3.titulo {
+    margin: 15px 0;
+}
+
+.text-input {
+    background: #e6e6e6; /*cor de fundo*/
+    height: 40px; /*altura*/
+    display: flex;
+    width: 60%; /*largura*/
+    align-items: center; /*alinhar os itens no centro*/
+    border-radius: 10px;
+    padding: 0 15px;
+    margin: 5px 0;
+}
+
+.text-input input {
+    background: none; /*sem cor de fundo*/
+    border: none; /*sem borda*/
+    outline: none; /*sem borda ao clicar*/
+    width: 100%; /*largura*/
+    height: 100%; /*altura*/
+    margin-left: 10px;
+}
+
+.text-input i {
+    color: #686868; /*cor*/
+}
+
+::placeholder {
+    color: #9a9a9a; /*cor*/
+}
+
+.login-botao {
+    width: 68%; /*largura*/
+    padding: 10px; /*espaçamento*/
+    color: #fff; /*cor do texto*/
+    background: linear-gradient(to right, #F8B8F2, #d252fa, #a82d9c); /*cor de fundo para gradiente*/
+    outline: none; /*sem borda quando clica*/
+    border: none; /*sem borda*/
+    cursor: pointer; /*muda o mouse para clicável*/
+    border-radius: 20px; /*arredondar a borda*/
+    margin-top: 10px; /*espaçamento entre o item de cima e o login-botao*/
+}
+
+a {
+    font-size: 12px; /*tamanho da fonte*/
+    color:#9a9a9a; /*cor do texto*/
+    cursor: pointer; /*muda o mouse para clicável*/
+    user-select: none;
+    text-decoration: none; /*sem decoração no texto*/
+}
+
+a.esqueceu {
+    margin-top: 25px;
+}
+
+.create {
+    display: flex; 
+    align-items: center; /*alinha os itens no centro*/
+    position: absolute;
+    bottom: 35px;
+}
+
+
+@media (min-width: 1055px) { /*tornar responsivo*/
+
+    .container {
+        grid-template-columns: 50% 50%; /*divide a porcentagem que cada coluna deve ocupar*/
+        grid-template-areas: "design login";
+    }
+
+    .design {
+        display: block;
+
+    }
+}
